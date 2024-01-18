@@ -1,13 +1,12 @@
 import { IsEmail, IsNotEmpty, Length } from 'class-validator';
 
 export class LoginUserDto {
-  @IsEmail()
   @IsNotEmpty({ message: 'Please Enter a valid Email' })
   readonly username: string;
 
   @IsNotEmpty({ message: 'Please Enter Password' })
   @Length(6, 50, {
-    message: 'Password length Must be between 6 and 50 charcters',
+    message: 'Password length Must be between 6 and 50 characters',
   })
   readonly password: string;
 }
